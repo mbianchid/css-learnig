@@ -1,0 +1,38 @@
+$main-color: #BEADFA;
+$second-color: #FFF3DA;
+
+// Block function
+
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin color-text($back-color, $text-color) {
+    width: 50%;
+        background-color: $back-color;
+        .text {
+            margin-top: 40%;
+            text-align: center;
+            font-size: 150px;
+            color: $text-color;
+        }
+}
+
+// Block style
+
+body {
+    @include reset();
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    .left {
+        @include color-text($main-color, $second-color);
+    }
+    .rigth {
+        @include color-text($second-color, $main-color);
+    }
+}
+
